@@ -53,8 +53,16 @@
 [Data tags](https://documentation.onesignal.com/docs/add-user-data-tags) enable you to attach metadata to user events. 
 Tags are a map of key-value pairs and can be set from your application's backend(s) and client(s).
 
+### Inspecting data tags
 
-1. Show where data tags can be found in the OneSignal Dashboard
+###### 1. Navigate to _Audience_
+<img width="1437" alt="audience-menu-selection" src="https://user-images.githubusercontent.com/1715082/137007996-c1c20dc2-e649-4f78-8b38-8c8388d12f34.png">
+
+###### 2. Select _All Users_ from the submenu
+<img width="1441" alt="users-submenu-selection" src="https://user-images.githubusercontent.com/1715082/137008242-8b0c87e8-1f14-4eae-84bb-7c01ffea3f03.png">
+
+###### You may need to adjust the _Displayed columns_ to see your tags
+<img width="1440" alt="displayed columns" src="https://user-images.githubusercontent.com/1715082/137007643-9c3993db-c8ee-4737-bed6-e03bf0d80e2a.png">
 
 
 ## Segments
