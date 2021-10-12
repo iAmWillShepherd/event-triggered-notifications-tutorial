@@ -7,10 +7,29 @@
 
 [Automated messages](https://documentation.onesignal.com/docs/automated-messages) enable you to push notifications and emails when a user enters a segment.
 
-1. Create an automated message template using The OneSignal Dashboard
+### Create an automated message template using The OneSignal Dashboard
+
+###### Navigate to _Messages_
+![automated-message-1](https://user-images.githubusercontent.com/1715082/136893452-2decb342-09e4-4e6a-aa15-724c3a92534e.png)
+
+###### Select _Automated_ from the submenu
+![automated-message-2](https://user-images.githubusercontent.com/1715082/136895432-3090eec7-ecfa-4dce-bded-1022faecaec2.png)
 
 
-## Message templates**
+###### Click the _New Automated Push_ button
+
+###### Select _Send to particular segment(S)_ option
+
+###### Choose segments to include
+
+###### Choose a backing message template
+
+###### Check _If the user returns to the app_ delivery option
+
+###### Activate the automated message
+
+
+## Message templates
 
 [Message templates](https://documentation.onesignal.com/docs/templates) enable you to dynamically generate the content of push notifications and emails.
 
