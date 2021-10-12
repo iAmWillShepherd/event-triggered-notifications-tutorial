@@ -19,8 +19,8 @@
 
 ## Data tags
 
-[Data tags](https://documentation.onesignal.com/docs/add-user-data-tags) enable you attach metadata to user events. 
-Tags are structured as a map of key-value pairs and can be set from your application's backend(s) and client(s).
+[Data tags](https://documentation.onesignal.com/docs/add-user-data-tags) enable you to attach metadata to user events. 
+Tags are a map of key-value pairs and can be set from your application's backend(s) and client(s).
 
 
 1. Show where data tags can be found in the OneSignal Dashboard
@@ -37,4 +37,4 @@ Tags are structured as a map of key-value pairs and can be set from your applica
 
 This repo ☝️☝️☝️
 
-1. Explain how to setup and run sample code
+1. Explain how to set up and run sample code
