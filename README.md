@@ -2,7 +2,6 @@
 
 (presume developer already has a OneSignal app)
 
-
 ## Automated messages
 
 [Automated messages](https://documentation.onesignal.com/docs/automated-messages) enable you to push notifications and emails when a user enters a segment.
@@ -24,10 +23,11 @@
 ###### 5. Choose segments to include
 <img width="1440" alt="Screen Shot 2021-10-12 at 12 34 32 AM" src="https://user-images.githubusercontent.com/1715082/136897939-831d4fcb-c464-4cd7-9840-d4fbb49d6ee7.png">
 
-
 ###### 6. Choose a backing message template
+<img width="1439" alt="message-template-selection" src="https://user-images.githubusercontent.com/1715082/136990762-a253eaf9-a08b-49b9-8f8d-ac70fa2e2ac2.png">
 
 ###### 7. Check _If the user returns to the app_ delivery option
+<img width="1439" alt="delivery-options" src="https://user-images.githubusercontent.com/1715082/136990476-08be3754-7f63-4ce9-80fd-ee606d8406d3.png">
 
 ###### 8. Activate the automated message
 
