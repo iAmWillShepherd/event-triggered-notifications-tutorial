@@ -36,7 +36,16 @@
 
 [Message templates](https://documentation.onesignal.com/docs/templates) enable you to dynamically generate the content of push notifications and emails.
 
-1. Create a message template using The OneSignal Dashboard
+### Create a message template using The OneSignal Dashboard
+
+###### 1. Navigate to _Messages_
+
+###### 2. Select _Templates_ from the submenu
+
+###### 3. Click the _New Push Template_ button
+
+###### 4. Complete the _Message_ form and save
+<img width="1438" alt="message template" src="https://user-images.githubusercontent.com/1715082/137006870-da9066f1-1140-4acb-9eee-f1b5903a23b5.png">
 
 
 ## Data tags
