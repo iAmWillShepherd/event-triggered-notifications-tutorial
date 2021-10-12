@@ -1,6 +1,8 @@
 # Event-triggered Notifications Tutorial
 
-(presume developer already has a OneSignal app)
+We can implement event-triggered notifications by creating **automated messages** that get triggered when a user enters a **segment**. Adding **Data tags** allow us to arbitrarily group users and enable dynamic content generation when combined with **message templates**. 
+
+Once all the components have been assembled, you can modify your application to set **data tags** when needed and lean on OneSignal to send the notifications wehn needed.
 
 ## Automated messages
 
@@ -75,6 +77,7 @@ Tags are a map of key-value pairs and can be set from your application's backend
 ###### 2. Click _New Segment_ button
 ###### 3. Give the segment a name
 ###### 4. Add rules for how users will be filtered 
+<img width="1439" alt="Screen Shot 2021-10-12 at 1 37 57 PM" src="https://user-images.githubusercontent.com/1715082/137010953-d2c9d0e2-1823-4327-bcd2-2dcfdcc80fe8.png">
 
 
 ## Sample code 
