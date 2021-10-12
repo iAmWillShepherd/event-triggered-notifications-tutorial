@@ -69,7 +69,12 @@ Tags are a map of key-value pairs and can be set from your application's backend
 
 [Segments](https://documentation.onesignal.com/docs/segmentation) enable you to group users by things they have in common.
 
-1. Create a segment using The OneSignal Dashboard
+### Create a segment
+
+###### 1. Navigate to _Audience_
+###### 2. Click _New Segment_ button
+###### 3. Give the segment a name
+###### 4. Add rules for how users will be filtered 
 
 
 ## Sample code 
