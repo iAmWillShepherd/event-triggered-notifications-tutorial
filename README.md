@@ -89,7 +89,7 @@ OneSignal.sendTag("times_event_performed", "3");
 
 We recommend using numbers as much as possible in your tag values. They support logical operations that enable more fine-grained user targeting and time operations that measure how long it’s been since a user acted. When using numbers to represent time like Unix timestamps, be sure to convert the value to seconds before sending it to OneSignal.
 
-### Data Tags used in example use-case
+### Data tags in example use-case
 
 Let's explore how data tags are used in our use-case example.
 
@@ -97,9 +97,7 @@ Let's explore how data tags are used in our use-case example.
 
 ```json
 {
-  "last_site_visit_date": ""
-}
-// the potential user has never landed on our site
+  "last_site_visit_date": ""  // the potential user has never landed on our site
 ```
 
 **Step 2 -** We collect user details like name, email, etc from the event's context.
@@ -113,7 +111,7 @@ Let's explore how data tags are used in our use-case example.
 }
 ```
 
-**Step 3 -** use **data tag** to indicate where in the onboarding process the user is and when they got there. If our process has only two steps, we would choose either `onboarding_started` or `onboarding_complete` and mark the time for each step.
+**Step 3 -** use data tag to indicate wherein the onboarding process the user is and when they got there. If our process has only two steps, we would choose either `onboarding_started` or `onboarding_complete` and mark the time for each step.
 
 ```json
 {
@@ -128,9 +126,33 @@ Let's explore how data tags are used in our use-case example.
 
 **Step 4 -** N/A
 
+## Segments
+
+Segments allow you to group devices based on their attributes. We can take advantage of one of the features of segments – sending an automated messages when a user/devices moves into a segment – to deliver an event-triggered notication workflow.
+
+### How to create a segment
+
+1. Navigate to _Audience_.
+2. Click _New Segment_ button.
+3. Give the segment a name.
+4. Add rules for how users will be filtered.
+   <img width="1439" alt="Screen Shot 2021-10-12 at 1 37 57 PM" src="https://user-images.githubusercontent.com/1715082/137010953-d2c9d0e2-1823-4327-bcd2-2dcfdcc80fe8.png">
+5. Click the _Create Segment_ button.
+
+### How to inspect data tags
+
+Since segments depend on data tags, we must first learn how to inspect their values.
+
+1. Navigate to _Audience_
+   <img width="1437" alt="audience-menu-selection" src="https://user-images.githubusercontent.com/1715082/137007996-c1c20dc2-e649-4f78-8b38-8c8388d12f34.png">
+2. Select _All Users_ from the submenu
+   <img width="1441" alt="users-submenu-selection" src="https://user-images.githubusercontent.com/1715082/137008242-8b0c87e8-1f14-4eae-84bb-7c01ffea3f03.png">
+3. Adjust the _Displayed columns_ to see your tags
+   <img width="1440" alt="displayed columns" src="https://user-images.githubusercontent.com/1715082/137007643-9c3993db-c8ee-4737-bed6-e03bf0d80e2a.png">
+
 ## Message Templates
 
-[Message templates](https://documentation.onesignal.com/docs/templates) enable you to dynamically generate the content of push notifications and emails.
+[Message templates](https://documentation.onesignal.com/docs/templates) enable you to scaffold out a message whose content is dynamically generated via data tag substitution.
 
 ### How to creating a message template
 
@@ -146,9 +168,9 @@ We can create a message template using the dashboard by following these steps.
 
 [Automated messages](https://documentation.onesignal.com/docs/automated-messages) enable you to push notifications or emails when a user enters a segment and are a key building block for implementing event-triggered notifications.
 
-### How to creating an automated message
+### How to create an automated message
 
-We can create automated messages using The OneSignal Dashboard using the following steps.
+We can create automated messages using The OneSignal Dashboard by following these steps.
 
 1. Navigate to _Messages_
    ![automated-message-1](https://user-images.githubusercontent.com/1715082/136893452-2decb342-09e4-4e6a-aa15-724c3a92534e.png)
@@ -172,27 +194,3 @@ We can create automated messages using The OneSignal Dashboard using the followi
    <img width="1439" alt="delivery-options" src="https://user-images.githubusercontent.com/1715082/136990476-08be3754-7f63-4ce9-80fd-ee606d8406d3.png">
 
 8. Activate the automated message
-
-## Leveraging Segments
-
-Segments allow you to group devices based on their attributes. We can take advantage of one of the features of segments – sending an automated messages when a user/devices moves into a segment – to deliver an event-triggered notication workflow.
-
-### How to create a segment
-
-1. Navigate to _Audience_.
-2. Click _New Segment_ button.
-3. Give the segment a name.
-4. Add rules for how users will be filtered.
-   <img width="1439" alt="Screen Shot 2021-10-12 at 1 37 57 PM" src="https://user-images.githubusercontent.com/1715082/137010953-d2c9d0e2-1823-4327-bcd2-2dcfdcc80fe8.png">
-5. Click the _Create Segment_ button.
-
-### How to inspect data tags
-
-Since segments depend on data tags, we must first learn how to inspect their values.
-
-1. Navigate to _Audience_
-   <img width="1437" alt="audience-menu-selection" src="https://user-images.githubusercontent.com/1715082/137007996-c1c20dc2-e649-4f78-8b38-8c8388d12f34.png">
-2. Select _All Users_ from the submenu
-   <img width="1441" alt="users-submenu-selection" src="https://user-images.githubusercontent.com/1715082/137008242-8b0c87e8-1f14-4eae-84bb-7c01ffea3f03.png">
-3. Adjust the _Displayed columns_ to see your tags
-   <img width="1440" alt="displayed columns" src="https://user-images.githubusercontent.com/1715082/137007643-9c3993db-c8ee-4737-bed6-e03bf0d80e2a.png">
