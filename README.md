@@ -4,9 +4,9 @@ An event-triggered notification is an automated messages sent in response to an 
 
 There are three approaches for implementing these types of notifications:
 
-- Leverage **Segments** for sending messages.
-- Use the OneSignal Notification API.
-- Use a platform SDK.
+- Leverage **Segments** for sending messages
+- Use the OneSignal Notification API
+- Use a platform SDK
 
 This tutorial series will cover the three methods outlined above, but first, I need to cover the building blocks that make this possible: events, segments, and automated messages.
 
@@ -14,10 +14,10 @@ This tutorial series will cover the three methods outlined above, but first, I n
 
 Suppose we want to send a new user an email, reminding them to complete the onboarding process for our app. The workflow may look something like the following:
 
-1. A potential user lands on our site.
-2. They sign up for our app.
-3. They begin the onboarding process for the app, but don't complete it.
-4. The app sends a customized email after 2 days of inactivity reminding them to complete onboarding.
+1. A potential user lands on our site
+2. They sign up for our app
+3. They begin the onboarding process for the app, but don't complete it
+4. The app sends a customized email after 2 days of inactivity reminding them to complete onboarding
 
 Each event results from a user action, and we can conditionally perform actions based on the event's context. You may be thinking that all this event stuff is a bit abstract, so we'll work through implementing the use case. Along the way, I'll cover some best practices to get the most out of event-triggered notifications in OneSignal.
 
@@ -25,7 +25,7 @@ Each event results from a user action, and we can conditionally perform actions 
 
 An event is an action or occurrence recognized by the software that usually originates from user interaction.
 
-Common events you may want to respond to include
+Common events you may want to respond to include:
 
 - Cart abandonment
 - User achievement
@@ -35,11 +35,11 @@ Common events you may want to respond to include
 
 ### Events generated in example use-case
 
-Let's see where events are generated with respect to our use-case example.
+Let's see where events are generated with respect to our use-case example:
 
-- **Step 1 -** Landing on the site.
-- **Step 2 -** Signing up for the app.
-- **Step 3 -** Starting the onboarding process.
+- **Step 1 -** Landing on the site
+- **Step 2 -** Signing up for the app
+- **Step 3 -** Starting the onboarding process
 - **Step 4 -** N/A
 
 ## What Are Data Tags
@@ -56,27 +56,27 @@ Data tags are attributes you attach to a device/user expressed as key-value pair
 
 Tags should be structured as key-value string pairs and never as a list or array. When implementing an even-triggered message workflow, we need to capture tags based on user activity. Keys should identify the action, while values can be one of several types.
 
-- Numbers to count actions taken.
-- Strings for qualitative data.
-- Timestamps for time data.
+- Numbers to count actions taken
+- Strings for qualitative data
+- Timestamps for time data
 
 #### Keys
 
-- Name cannot be `null` or `undefined`.
-- Names are case-sensitive.
+- Name cannot be `null` or `undefined`
+- Names are case-sensitive
 
 #### Values
 
-- Must be encoded as string data; this includes numbers.
-- Cannot contain more than 300 characters.
+- Must be encoded as string data; this includes numbers
+- Cannot contain more than 300 characters
 
 #### Best practices
 
 - Only use lowercase characters for key names.
 - Avoid special characters (`~ ! @ # $ % ^ & * ‘ { } ( ) | \ .`) in key names and value data.
-- Avoid spaces in both key names and value data.
-- Stick to alphanumeric characters and underscores (`_`).
-- Keep it simple when modeling data tag values.
+- Avoid spaces in both key names and value data
+- Stick to alphanumeric characters and underscores (`_`)
+- Keep it simple when modeling data tag values
 
 ### Capturing data
 
@@ -104,10 +104,10 @@ Let's explore how data tags are used in our use-case example.
 
 ```json
 {
-  "last_site_visit_dt": "",
+  "last_site_visit_date": "",
   "first_name": "Rick",
   "last_name": "Sanchez",
-  "email": "picklerick@gmail.com"
+  "email": "something@example.com"
 }
 ```
 
@@ -120,7 +120,7 @@ Let's explore how data tags are used in our use-case example.
   "last_name": "Sanchez",
   "email": "picklerick@gmail.com",
   "onboarding_stage": "started",
-  "onboarding_start_dt: "1638209022859" // 'Mon Nov 29 2021 12:04:00 GMT-0600 (Central Standard Time)'
+  "onboarding_start_date": "1638209022859" // 'Mon Nov 29 2021 12:04:00 GMT-0600 (Central Standard Time)'
 }
 ```
 
@@ -132,16 +132,16 @@ Segments allow you to group devices based on their attributes. We can take advan
 
 ### How to create a segment
 
-1. Navigate to _Audience_.
-2. Click _New Segment_ button.
-3. Give the segment a name.
-4. Add rules for how users will be filtered.
+1. Navigate to _Audience_
+2. Click _New Segment_ button
+3. Give the segment a name
+4. Add rules for how users will be filtered
    <img width="1439" alt="Screen Shot 2021-10-12 at 1 37 57 PM" src="https://user-images.githubusercontent.com/1715082/137010953-d2c9d0e2-1823-4327-bcd2-2dcfdcc80fe8.png">
-5. Click the _Create Segment_ button.
+5. Click the _Create Segment_ button
 
 ### How to inspect data tags
 
-Since segments depend on data tags, we must first learn how to inspect their values.
+Since segments depend on data tags, we should learn how to inspect their values, so that we can have some level of transparency into how a device ends up in a particular segment. This is very useful when you're trying to debug why a device is being placed into a particular segment.
 
 1. Navigate to _Audience_
    <img width="1437" alt="audience-menu-selection" src="https://user-images.githubusercontent.com/1715082/137007996-c1c20dc2-e649-4f78-8b38-8c8388d12f34.png">
@@ -168,9 +168,9 @@ We can create a message template using the dashboard by following these steps.
 
 [Automated messages](https://documentation.onesignal.com/docs/automated-messages) enable you to push notifications or emails when a user enters a segment and are a key building block for implementing event-triggered notifications.
 
-### How to create an automated message
+### How to Create an Automated Message
 
-We can create automated messages using The OneSignal Dashboard by following these steps.
+We can create automated messages using the OneSignal dashboard by following these steps.
 
 1. Navigate to _Messages_
    ![automated-message-1](https://user-images.githubusercontent.com/1715082/136893452-2decb342-09e4-4e6a-aa15-724c3a92534e.png)
@@ -181,7 +181,7 @@ We can create automated messages using The OneSignal Dashboard by following thes
 3. Click the _New Automated Push_ button
    <img width="1440" alt="Screen Shot 2021-10-11 at 11 28 10 PM" src="https://user-images.githubusercontent.com/1715082/136896871-6ebf5f79-dd5e-411c-9214-81d15bc61069.png">
 
-4. Select _Send to particular segment(S)_ option
+4. Select _Send to particular segment(s)_ option
    <img width="1440" alt="Screen Shot 2021-10-11 at 11 28 39 PM" src="https://user-images.githubusercontent.com/1715082/136897124-b8cc315d-fad3-4be5-b710-5bb93c7e3f3a.png">
 
 5. Choose segments to include
@@ -194,3 +194,5 @@ We can create automated messages using The OneSignal Dashboard by following thes
    <img width="1439" alt="delivery-options" src="https://user-images.githubusercontent.com/1715082/136990476-08be3754-7f63-4ce9-80fd-ee606d8406d3.png">
 
 8. Activate the automated message
+
+## Triggering a notification
